@@ -5,7 +5,8 @@ const Schema = mongoose.Schema
 const flightSchema = new Schema ({
   airline: {
     type: String,
-    enum: ['American', 'Southwest', 'United']
+    enum: ['American', 'Southwest', 'United'],
+    required: true
   },
   airport: {
     type: String,
@@ -15,21 +16,15 @@ const flightSchema = new Schema ({
   flightNo: {
     type: Number,
     min: 10,
-    max: 9999
+    max: 9999,
+    required: true
   },
   departs: {
     type: Date,
-    default: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toLocaleString([], {
-      year: 'numeric', 
-      month: 'numeric', 
-      day: 'numeric', 
-      hour: '2-digit', 
-      minute: '2-digit'
-    })
+    default: new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+    }
   }
-
-})
-
+)
 const Flight = mongoose.model('Flight', flightSchema)
 
 export {
