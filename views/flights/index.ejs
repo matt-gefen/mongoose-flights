@@ -5,11 +5,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <title>Flights Index</title>
+  <title><%=title%></title>
 </head>
 <body>
-  TIME TO FLY
-
-  <a href='/flights/new'><button>Add New Flight</button></a>
+  <nav>
+    <a href='/flights'>All Flights</a>
+    <a href='/flights/new'>Add Flight</a>
+  </nav>
+  <main>
+  <h1><%=title%></h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Airline</th>
+        <th>Airport</th>
+        <th>Flight Number</th>
+        <th>Departure Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%flights.sort((a,b) => {return a.departs - b.departs})%>
+      <%flights.forEach(t => { %>
+      <tr>
+        <td><%=t.airline%></td>
+        <td><%=t.airport%></td>
+        <td><%=t.flightNo%></td>
+        <td><%=t.departs.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName:'short'})%></td>
+      </tr>
+      <% })%>
+    </tbody>
+  </table>
+</main>
 </body>
 </html>
