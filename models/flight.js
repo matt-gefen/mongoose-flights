@@ -18,7 +18,14 @@ const flightSchema = new Schema ({
     max: 9999
   },
   departs: {
-    type: Date
+    type: Date,
+    default: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toLocaleString([], {
+      year: 'numeric', 
+      month: 'numeric', 
+      day: 'numeric', 
+      hour: '2-digit', 
+      minute: '2-digit'
+    })
   }
 
 })

@@ -6,9 +6,15 @@ function index(req, res) {
 
 function newFlight(req, res) {
   console.log('new flight requested!')
+  res.render('flights/new')
+}
+
+function create(req, res) {
+  console.log('new flight created!')
 }
 
 export {
   index,
-  newFlight as new
+  newFlight as new,
+  create
 }
