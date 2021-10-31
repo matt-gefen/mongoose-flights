@@ -72,10 +72,40 @@ function createTicket(req, res) {
   })
 }
 
+function deleteFlight(req, res) {
+  Flight.findByIdAndDelete(req.params.id, function(error, flight) {
+    if(error) {
+      console.log(error)
+      return res.redirect("/flights")
+    }
+    res.redirect("/flights")
+  })
+}
+function deleteTicket(req, res) {
+  // console.log(req.params)
+  Flight.findById(req.params.id, function(error, flight) {
+    if(error) {
+      console.log(error)
+      return res.redirect(`/flights/${req.params.id}`)
+    }
+      flight.tickets.forEach(function(t, idx) {
+        let id = t._id
+        let strId = id.toString()
+        if(strId === req.params.ticketId) {
+          flight.tickets.splice(idx, 1)
+        }
+      })
+      flight.save()
+      res.redirect(`/flights/${req.params.id}`)
+  })
+}
+
 export {
   index,
   newFlight as new,
   create,
   show,
-  createTicket
+  createTicket,
+  deleteFlight as delete,
+  deleteTicket
 }

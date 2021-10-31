@@ -37,8 +37,8 @@
   method='POST'
   >
   <h2>Add Ticket</h2>
-  <label>Seat Number
-    <input name='seat'>
+  <label>Seat Number (A-F, 1-99 : "A12")
+    <input name="seat" required pattern="[A-F][1-9]\d?">
   </label><br>
   <label>Price
     <input name='price'>
@@ -59,6 +59,12 @@
         <tr>
           <td><%=t.seat%></td>
           <td><%=t.price%></td>
+          <td>
+            <form 
+              action='/flights/tickets/<%=flight._id%>/<%=t._id%>?_method=DELETE'
+              method='POST'>
+              <button type="submit">X</button>
+            </form></td>
         </tr>
       <%})%>
     </tbody>
