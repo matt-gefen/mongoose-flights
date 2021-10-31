@@ -1,0 +1,35 @@
+<%- include("../partials/html-head") %> 
+
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<%- include("../partials/nav") %> 
+<main>
+  <h1>Flight <%=flight.flightNo%>: Details</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Airline</th>
+        <th>Airport</th>
+        <th>Flight Number</th>
+        <th>Departure Time</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+      <tr
+      <% if(flight.departs < new Date()) { %>
+        class='departed' 
+        <% } %>
+        >
+        <td><%=flight.airline%></td>
+        <td><%=flight.airport%></td>
+        <td><%=flight.flightNo%></td>
+        <td>
+          <%=flight.departs.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName:'short'})%>
+        </td>
+        <td> <%= (flight.departs < new Date()) ? "Departed" : "Not Departed" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+<%- include("../partials/footer") %> 
