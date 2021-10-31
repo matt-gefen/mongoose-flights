@@ -22,7 +22,10 @@ function newFlight(req, res) {
   const time = departure.slice(12,18) 
   departure = `${year}-${month}-${day}T${time}00` 
   console.log(departure)
-  res.render('flights/new', {departure})
+  res.render('flights/new', {
+    departure,
+    title: 'Add New Flight'
+  })
 }
 
 function create(req, res) {
