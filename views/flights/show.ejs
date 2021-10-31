@@ -31,5 +31,20 @@
       </tr>
     </tbody>
   </table>
+  <form
+  id='add-ticket-form'
+  action='/flights/<%=flight.id%>/tickets'
+  method='POST'
+  >
+  <h2>Add Ticket</h2>
+  <label>Seat Number
+    <input name='seat'>
+  </label><br>
+  <label>Price
+    <input name='price'>
+  </label><br>
+  <button type='submit'>Add</button>
+    
+  </form>
 </main>
 <%- include("../partials/footer") %> 
