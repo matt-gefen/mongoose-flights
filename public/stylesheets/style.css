@@ -19,6 +19,10 @@ body {
     "nav"
     "main"; 
 }
+h1 {
+  color: #D9ED92;
+  font-size: 40px;
+}
 
 nav {
   grid-area: nav;
@@ -50,8 +54,8 @@ nav > i {
   font-family: 'Rubik', serif;
   font-size: 2vh;
   margin: 0px 10px 0px 10px;
-  height: 4vh;
-  width: 12vh;
+  height: 5vh;
+  width: 16vh;
   background-color: #1E6091;
   color: #D9ED92;
   border: #1E6091;
@@ -100,7 +104,9 @@ td {
 
 #delete-row {
   background-color: #1E6091;
-  display: flex;
+}
+.details-row {
+  color: white;
 }
 
 th {

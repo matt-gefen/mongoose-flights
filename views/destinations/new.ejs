@@ -1,0 +1,15 @@
+<%- include("../partials/html-head") %> 
+
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<%- include("../partials/nav") %> 
+  <main>
+  <h1><%=title%></h1>
+  <form action="/performers" method="POST" id="add-performer-form">
+    <label for="destination-input">Destination Name:
+    </label>
+    <input type="text" name="destination" id="destination-input">
+    <button type="submit">Add Destination</button>
+  </form>
+</main>
+<%- include("../partials/footer") %> 
