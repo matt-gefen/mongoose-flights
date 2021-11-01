@@ -19,7 +19,7 @@
     <tbody>
       <%flights.sort((a,b) => {return a.departs - b.departs})%>
       <%flights.forEach(f => { %>
-      <tr
+      <tr id = 'index-tr'
       <% if(f.departs < new Date()) { %>
         class='departed' 
         <% } else { %>
@@ -33,7 +33,7 @@
           <%=f.departs.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName:'short'})%>
         </td>
         <td><a href='/flights/<%=f._id%>'>Details</a></td>
-        <td>
+        <td id='delete-row'>
           <form 
             action='/flights/<%=f._id%>?_method=DELETE'
             method='POST'>
