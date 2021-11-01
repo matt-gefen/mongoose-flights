@@ -1,17 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rubik:wght@500&display=swap');
+
 html {
   box-sizing: border-box;
-  height: 100%;
 }
 
 body {
-  height: 100%;
-  width: 100%;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color:  #FCEADE;
-  color: black;
+  min-height: 100vh;
+  margin: 0;
+  font: 14px;
+  font-family: 'Rubik', serif;
+  /* background-color:  #25CED1; */
+  color: white;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.15fr 1.5fr; 
+  grid-template-columns: 100vw;
+  grid-template-rows: 0.10fr 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
     "nav"
@@ -20,10 +22,13 @@ body {
 
 nav {
   grid-area: nav;
+  width: 100%;
   display: flex;
   align-items: center;
   background-color:  #25CED1;
   color: black;
+  padding: 0;
+  margin:0;
 }
 
 nav > i {
@@ -35,10 +40,12 @@ nav > i {
 
 main {
   grid-area: main;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-color:  #1E6091;
 }
 
 a {
@@ -46,20 +53,34 @@ a {
 }
 
 .departed {
-  color: #EA526F;
+  color: #34A0A4;
 }
 
 .not-departed {
-  color: black;
+  color: #99D98C;
 }
 
 table {
-  border-spacing: 0.5rem;
+  border-spacing: 0.2rem;
 }
 
 thead {
   font-size: 15px;
   font-weight: bold;
+}
+
+tr:nth-child(odd) {
+  background-color: #184E77;
+}
+
+tr:nth-child(even) {
+  background-color: #1A759F;
+}
+
+th {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #1E6091;
 }
 
 #delete {
