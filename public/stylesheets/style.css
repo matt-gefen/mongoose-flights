@@ -1,6 +1,44 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
 body {
-  padding: 50px;
+  height: 100%;
+  width: 100%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:  #FCEADE;
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.15fr 1.5fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "nav"
+    "main"; 
+}
+
+nav {
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  background-color:  #25CED1;
+  color: black;
+}
+
+nav > i {
+  /* object-fit: contain; */
+  /* width: 100%; */
+  /* height: 60%; */
+  margin-right: auto;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 a {
@@ -8,5 +46,22 @@ a {
 }
 
 .departed {
-  color: red;
+  color: #EA526F;
+}
+
+.not-departed {
+  color: black;
+}
+
+table {
+  border-spacing: 0.5rem;
+}
+
+thead {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#delete {
+  background-color: #f45b69;
 }

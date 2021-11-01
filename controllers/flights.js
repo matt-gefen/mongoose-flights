@@ -14,14 +14,14 @@ function index(req, res) {
 function newFlight(req, res) {
   const newFlight = new Flight()
   let departure = newFlight.departs
-  departure = String(departure.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false}))
-  console.log(departure)
+  departure = String(departure.toLocaleString([], {year: '2-digit', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false}))
+  console.log('original departure', departure)
   const month = departure.slice(0,2) 
   const day = departure.slice(3,5) 
-  const year = departure.slice(6,10) 
-  const time = departure.slice(12,18) 
-  departure = `${year}-${month}-${day}T${time}00` 
-  console.log(departure)
+  const year = departure.slice(6,8) 
+  const time = departure.slice(10,15) 
+  departure = `20${year}-${month}-${day}T${time}` 
+  console.log("departure", departure)
   res.render('flights/new', {
     departure,
     title: 'Add New Flight'
@@ -95,7 +95,12 @@ function deleteTicket(req, res) {
           flight.tickets.splice(idx, 1)
         }
       })
-      flight.save()
+      flight.save(function(error) {
+        if(error) {
+          console.log(error)
+          return res.redirect(`/flights/${req.params.id}`)
+        }
+      })
       res.redirect(`/flights/${req.params.id}`)
   })
 }

@@ -9,11 +9,11 @@
   <table>
     <thead>
       <tr>
-        <th>Airline</th>
-        <th>Airport</th>
-        <th>Flight Number</th>
-        <th>Departure Time</th>
-        <th>Details</th>
+        <th class='header'>Airline</th>
+        <th class='header'>Airport</th>
+        <th class='header'>Flight Number</th>
+        <th class='header'>Departure Time</th>
+        <th class='header'>Details</th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +22,9 @@
       <tr
       <% if(f.departs < new Date()) { %>
         class='departed' 
-        <% } %>
+        <% } else { %>
+          class='not-departed'
+          <% } %>
         >
         <td><%=f.airline%></td>
         <td><%=f.airport%></td>
@@ -35,7 +37,7 @@
           <form 
             action='/flights/<%=f._id%>?_method=DELETE'
             method='POST'>
-            <button type="submit">X</button>
+            <button id='delete' type="submit">X</button>
           </form></td>
       </tr>
       <% })%>
