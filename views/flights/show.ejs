@@ -31,6 +31,15 @@
       </tr>
     </tbody>
   </table>
+  <div>Destinations:</div>
+  <ul>
+    <%- flight.destinations.map(d => `<li>${d.airport}</li>`).join(" ") %>    
+  </ul>
+  <form id='add-to-destinations' action='/flights/<%=flight._id%>/destinations' method='POST'>
+    <select name='destinationId'> <%- airportsNotInList.map(d => `<option value="${d._id}">${d.airport}</option>)`).join(" ") %> </select>
+    <button type="submit">Add to Flight</button>
+  </form>
+  
   <form
   id='add-ticket-form'
   action='/flights/<%=flight.id%>/tickets'

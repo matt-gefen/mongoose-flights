@@ -5,11 +5,19 @@
 <%- include("../partials/nav") %> 
   <main>
   <h1><%=title%></h1>
-  <form action="/performers" method="POST" id="add-performer-form">
+  <p>Please first ensure that the Destination is not in the dropdown
+    <select>
+      <% destinations.forEach(function(destination) { %>
+        <%console.log(destination) %>
+        <option><%= destination.airport %></option>
+      <% }) %>
+    </select>
+  </p>
+  <form action="/destinations" method="POST" id="add-performer-form">
     <label for="destination-input">Destination Name:
     </label>
-    <input type="text" name="destination" id="destination-input">
-    <button type="submit">Add Destination</button>
+    <input type="text" name="airport" id="destination-input">
+    <button type="submit">Add</button>
   </form>
 </main>
 <%- include("../partials/footer") %> 
