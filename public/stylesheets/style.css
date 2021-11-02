@@ -44,7 +44,7 @@ nav > i {
 }
 
 #plane-link {
-  color: black;
+  color: #1E6091;
   margin-right: auto;
   margin-left: 20px;
   /* background-color: black; */
@@ -121,4 +121,28 @@ th {
   /* border-radius: 25px; */
   font-family: 'Rubik', serif;
   height: 100%;
+}
+
+#destinations {
+  margin: 50px;
+  font-size: 2vh;
+}
+
+.on-page-button {
+  background-color: #D9ED92;
+  color: #1E6091;
+  border: #D9ED92;
+  border-radius: 25px;
+}
+
+.active-button {
+  font-family: 'Rubik', serif;
+  font-size: 2vh;
+  margin: 0px 10px 0px 10px;
+  height: 5vh;
+  width: 16vh;
+  background-color: #D9ED92;
+  color: #1E6091;
+  border: #D9ED92;
+  border-radius: 25px;
 }
