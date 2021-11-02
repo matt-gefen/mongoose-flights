@@ -8,7 +8,7 @@
   <form
     action = '/flights'
     method = 'POST'>
-    <label>Airline
+    <label>Airline: 
       <select name='airline'>
         <option value=""></option>
         <option value="American">American</option>
@@ -16,7 +16,7 @@
         <option value="United">United</option>
       </select>
     </label><br>
-    <label>Airport
+    <label>Airport: 
       <select name='airport'>
         <option value="DEN">DEN</option>
         <option value="AUS">AUS</option>
@@ -25,10 +25,10 @@
         <option value="SAN">SAN</option>
       </select>
     </label><br>
-    <label>Flight Number
+    <label>Flight Number: 
       <input type='text' name='flightNo'>
     </label><br>
-    <label>Departure Date
+    <label>Departure Date: 
       <input type='datetime-local' name='departs' value='<%=departure%>'>
     </label><br>
     <button class='on-page-button' type="submit">Add Flight</button>

@@ -118,7 +118,7 @@ th {
 #delete {
   background-color: #f45b69;
   border-color: #f45b69;
-  /* border-radius: 25px; */
+  border-radius: 25px;
   font-family: 'Rubik', serif;
   height: 100%;
 }
@@ -145,4 +145,9 @@ th {
   color: #1E6091;
   border: #D9ED92;
   border-radius: 25px;
+}
+
+label {
+  display: flex;
+  gap: 20px;
 }
